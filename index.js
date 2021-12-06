@@ -1,8 +1,10 @@
 var express = require('express');
 const products = require('./src/products');
 const { filteredProducts } = require('./src/utils');
-var app = express();
+require('dotenv').config()
 
+
+var app = express();
 
 app.get('/', function(request, response) {
     response.send('Use /products?page={page}&limit={limit}&filter={filter} to get products');
