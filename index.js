@@ -30,6 +30,6 @@ app.get('/products', function(request, response) {
     })
 });
 
-app.listen(process.env.PORT, function() {
-  console.log(`Servidor iniciado na porta ${process.env.PORT}`);
+app.listen(process.env.PORT || 8080, function() {
+  console.log(`Servidor iniciado na porta ${process.env.PORT || 8080}`);
 });
