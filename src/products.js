@@ -1,8 +1,5 @@
-const { v4: uuidv4 } = require('uuid');
-
-const products = [
+const originalProducts = [
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -23,7 +20,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -44,7 +40,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -64,7 +59,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -84,7 +78,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -105,7 +98,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -126,7 +118,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -146,7 +137,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -166,7 +156,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -187,7 +176,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -208,7 +196,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -228,7 +215,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -248,7 +234,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -269,7 +254,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -290,7 +274,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -310,7 +293,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -330,7 +312,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -351,7 +332,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -372,7 +352,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -392,7 +371,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -412,7 +390,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -433,7 +410,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -454,7 +430,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -474,7 +449,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -494,7 +468,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -515,7 +488,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -536,7 +508,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -556,7 +527,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -576,7 +546,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -597,7 +566,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -618,7 +586,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -638,7 +605,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -658,7 +624,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -679,7 +644,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -700,7 +664,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -720,7 +683,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -740,7 +702,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -761,7 +722,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -782,7 +742,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -802,7 +761,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -822,7 +780,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -843,7 +800,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -864,7 +820,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -884,7 +839,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -904,7 +858,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -925,7 +878,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -946,7 +898,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -966,7 +917,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -986,7 +936,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -1007,7 +956,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -1028,7 +976,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -1048,7 +995,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -1068,7 +1014,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -1089,7 +1034,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -1110,7 +1054,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -1130,7 +1073,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -1150,7 +1092,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
     name: "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
@@ -1171,7 +1112,6 @@ const products = [
       "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26453-01.png",
     name: "Colección De Familia La Mateo D.O.Ca. Rioja 2017",
@@ -1192,7 +1132,6 @@ const products = [
       "Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/24168-01.png",
     name: "Viña Bouchon País Salvaje 2019",
@@ -1212,7 +1151,6 @@ const products = [
       "Pontuado com 92 Tim Atkin, este tinto traz a uva País, proveniente de vinhas selvagens que crescem naturalmente no Valle del Maule. A colheita dessas uvas é feita manualmente, com o auxílio de escadas de até 5 metros de altura. Para expressar fielmente suas características, esse vinho não é filtrado, preservando os aromas e sabores desta raridade",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -1232,7 +1170,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -1252,7 +1189,6 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
   {
-    uidPk: uuidv4(),
     image:
       "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19252-01.png",
     name: "Canepa Novísimo Cabernet Sauvignon 2017",
@@ -1272,5 +1208,10 @@ const products = [
       "Jovem e com um estilo que agrada com facilidade, esse versátil rótulo pode ser degustado sozinho ou harmonizado com receitas do dia a dia. A Viña Canepa, fundada no Chile por imigrantes italianos, iniciou a produção da linha Novísimo nos anos 80.",
   },
 ];
+
+const products = originalProducts.map((product, index) => ({
+  id: index,
+  ...product,
+}))
 
 module.exports = products;
