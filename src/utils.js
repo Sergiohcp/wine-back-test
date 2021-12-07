@@ -1,6 +1,12 @@
 const products = require("./products");
 
-function filteredProducts(page, limit, filter) {
+function verifyProductName(productName, filterName) {
+    const productNameNormalized = productName.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/ /g,"").toLowerCase();
+    const filterNameNormalized = filterName.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/ /g,"").toLowerCase();
+    return productNameNormalized.includes(filterNameNormalized);
+}
+
+function filteredProducts(page, limit, filter, name) {
     let productsToFilter = []
 
     if (!filter || typeof filter !== 'string' || !filter.includes('-')) {
@@ -15,9 +21,19 @@ function filteredProducts(page, limit, filter) {
     const init = (page - 1) * limit;
     const final = init + limit;
     const mappedProducts = productsToFilter.filter((_, index) => index >= init && index < final);
+
+
+    if (!!name && typeof name === 'string') {
+        const mappedProductsByName = mappedProducts.filter(item => verifyProductName(item.name, name));     
+        return {
+            items: mappedProductsByName,
+            totalItems: mappedProductsByName.length,
+        };
+    }
+
     return {
         items: mappedProducts,
-        totalItems: productsToFilter,
+        totalItems: productsToFilter.length,
     };
 }
 

@@ -12,20 +12,20 @@ app.get('/', function(request, response) {
 
 app.get('/products', function(request, response) {
 
-    const { page: queryPage, limit: queryLimit, filter } = request.query;
+    const { page: queryPage, limit: queryLimit, filter, name } = request.query;
 
     const page = !queryPage ? 1 : Number(queryPage)
     const limit = !queryLimit ? products.length : Number(queryLimit)
 
-    const { items, totalItems } = filteredProducts(page, limit, filter);
+    const { items, totalItems } = filteredProducts(page, limit, filter, name);
 
-    const totalPages = Math.ceil((totalItems.length / limit));
+    const totalPages = Math.ceil((totalItems / limit));
 
     response.json({
         page: page,
         totalPages,
         itemsPerPage: items.length,
-        totalItems: totalItems.length,
+        totalItems,
         items,
     })
 });
