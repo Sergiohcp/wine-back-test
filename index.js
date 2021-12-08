@@ -1,10 +1,12 @@
 var express = require('express');
+var cors = require('cors')
 const products = require('./src/products');
 const { filteredProducts } = require('./src/utils');
 require('dotenv').config()
 
-
 var app = express();
+
+app.use(cors())
 
 app.get('/', function(request, response) {
     response.send('Use /products?page={page}&limit={limit}&filter={filter} to get products');
